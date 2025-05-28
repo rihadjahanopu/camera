@@ -22,8 +22,9 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	min-height: 100vh;
-	padding: 1.5rem 0.5rem 2rem 0.5rem;
+	height: 100vh;
+	margin: 0;
+	padding: 16px;
 }
 
 /* Title */
@@ -54,6 +55,10 @@ canvas {
 	margin-bottom: 20px;
 	position: absolute;
 	bottom: 0;
+	background-color: #ff4081;
+	width: 88%;
+	border-radius: 20px;
+	padding: 0.8rem 1rem;
 }
 
 button,
@@ -106,7 +111,6 @@ select {
 	video,
 	canvas {
 		border-radius: 12px;
-
 		width: 100%;
 	}
 

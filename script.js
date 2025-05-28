@@ -140,6 +140,11 @@ window.addEventListener("DOMContentLoaded", () => {
 		ctx.filter = video.style.filter || "none";
 		ctx.drawImage(video, 0, 0);
 
+		// Vibrate device on capture (if supported)
+		if (navigator.vibrate) {
+			navigator.vibrate(100); // vibrate for 100ms
+		}
+
 		// Download as Blob
 		canvas.toBlob((blob) => {
 			const url = URL.createObjectURL(blob);
