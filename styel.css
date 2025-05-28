@@ -1,103 +1,118 @@
-/* Global Material Design Base */
+/* Modern Mobile Camera App CSS */
 :root {
-	--primary-color: #6200ee;
-	--primary-light: #bb86fc;
-	--primary-dark: #3700b3;
-	--background-color: #f5f5f5;
-	--surface-color: #ffffff;
-	--text-color: #000000;
-	--font-family: "Roboto", sans-serif;
-	--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	font-family: var(--font-family);
+	--primary-color: #1976d2;
+	--primary-dark: #0d47a1;
+	--accent-color: #ff4081;
+	--background-color: #f9f9f9;
+	--surface-color: #fff;
+	--text-color: #222;
+	--font-family: "Roboto", Arial, sans-serif;
+	--shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 body {
-	background-color: var(--background-color);
-	padding: 1rem;
+	background: var(--background-color);
 	color: var(--text-color);
+	font-family: var(--font-family);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	min-height: 100vh;
+	padding: 1.5rem 0.5rem 2rem 0.5rem;
 }
 
 /* Title */
 h2 {
-	margin-bottom: 1rem;
+	margin-bottom: 1.2rem;
 	color: var(--primary-dark);
-	font-size: 1.5rem;
+	font-size: 1.4rem;
+	font-weight: 600;
 	text-align: center;
+	letter-spacing: 0.02em;
 }
 
 /* Camera Feed */
 video,
 canvas {
-	width: 100%;
-	max-width: 400px;
+	width: 100vw;
+	max-width: 420px;
 	aspect-ratio: 3 / 4;
-	border-radius: 12px;
+	border-radius: 18px;
 	box-shadow: var(--shadow);
-	background-color: #000;
-	margin-bottom: 1rem;
+	background: #000;
+	margin-bottom: 1.2rem;
 }
 
 /* Controls */
+.controls {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-bottom: 1.2rem;
+}
+
 button,
 select {
 	appearance: none;
 	border: none;
 	outline: none;
-	border-radius: 8px;
-	padding: 0.75rem 1.25rem;
-	margin: 0.5rem 0.25rem;
-	font-size: 1rem;
+	border-radius: 10px;
+	padding: 0.85rem 1.5rem;
+	margin: 0.25rem 0.15rem;
+	font-size: 1.08rem;
 	font-weight: 500;
-	background-color: var(--primary-color);
+	background: var(--primary-color);
 	color: #fff;
 	box-shadow: var(--shadow);
-	transition: background-color 0.2s ease-in-out;
+	transition: background 0.18s, color 0.18s;
 	cursor: pointer;
 }
 
-button:hover,
-select:hover {
-	background-color: var(--primary-dark);
+button:active {
+	background: var(--accent-color);
+	color: #fff;
+}
+
+button:disabled {
+	background: #bdbdbd;
+	color: #eee;
+	cursor: not-allowed;
 }
 
 select {
-	background-color: var(--primary-light);
-	color: var(--text-color);
+	background: var(--surface-color);
+	color: var(--primary-dark);
+	border: 1px solid #e0e0e0;
 }
 
 /* Download link */
 #downloadLink {
 	display: inline-block;
-	margin-top: 1rem;
-	font-size: 0.95rem;
+	margin-top: 1.1rem;
+	font-size: 1.02rem;
 	text-decoration: none;
-	color: var(--primary-dark);
+	color: var(--accent-color);
+	font-weight: 500;
+	letter-spacing: 0.01em;
 }
 
 /* Responsive Layout */
-@media (min-width: 600px) {
-	body {
-		padding: 2rem;
-	}
-
+@media (max-width: 600px) {
 	video,
 	canvas {
-		max-width: 480px;
+		max-width: 98vw;
+		border-radius: 12px;
 	}
 
 	button,
 	select {
-		font-size: 1.1rem;
+		font-size: 1rem;
+		padding: 0.7rem 1.1rem;
 	}
+}
+
+::-webkit-scrollbar {
+	display: none;
 }
