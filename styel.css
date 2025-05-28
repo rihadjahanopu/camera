@@ -15,7 +15,7 @@ html {
 }
 
 body {
-	background: black;
+	background: rgb(251, 238, 238);
 	color: var(--text-color);
 	font-family: var(--font-family);
 	display: flex;
@@ -39,14 +39,11 @@ h2 {
 /* Camera Feed */
 video,
 canvas {
-	width: 100vw;
-
-	max-width: 420px;
-	aspect-ratio: 3 / 4;
 	border-radius: 18px;
 	box-shadow: var(--shadow);
 	background: #000;
 	margin-bottom: 1.2rem;
+	border: 5px solid var(--primary-color);
 }
 
 /* Controls */
