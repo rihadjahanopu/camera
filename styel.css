@@ -15,7 +15,7 @@ html {
 }
 
 body {
-	background: rgb(251, 238, 238);
+	background: rgb(0, 0, 0);
 	color: var(--text-color);
 	font-family: var(--font-family);
 	display: flex;
@@ -43,7 +43,6 @@ canvas {
 	box-shadow: var(--shadow);
 	background: #000;
 	margin-bottom: 1.2rem;
-	border: 5px solid var(--primary-color);
 }
 
 /* Controls */
