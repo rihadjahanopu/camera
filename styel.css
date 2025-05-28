@@ -106,7 +106,6 @@ select {
 @media (max-width: 600px) {
 	video,
 	canvas {
-		max-width: 98vw;
 		border-radius: 12px;
 	}
 
