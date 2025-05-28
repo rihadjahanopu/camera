@@ -16,13 +16,17 @@ window.addEventListener("DOMContentLoaded", () => {
 	let isRecording = false;
 
 	// Insert recording toggle button before startBtn
+	const controlsDiv = document.querySelector(".controls");
 	const recordToggleBtn = document.createElement("button");
 	recordToggleBtn.id = "recordToggle";
 	recordToggleBtn.textContent = "Start Recording";
-	if (startBtn) {
-		document.body.insertBefore(recordToggleBtn, startBtn);
-		startBtn.style.display = "none";
+	if (controlsDiv) {
+		controlsDiv.insertBefore(
+			recordToggleBtn,
+			controlsDiv.querySelector("#filterSelect").nextSibling
+		);
 	}
+	if (startBtn) startBtn.style.display = "none";
 	if (stopBtn) stopBtn.style.display = "none";
 
 	// Start camera with video + audio (HD), fallback to lower resolution if needed
@@ -164,16 +168,18 @@ window.addEventListener("DOMContentLoaded", () => {
 		toggleAudioBtn.textContent = audioEnabled ? "Mute Audio" : "Unmute Audio";
 	};
 
+	// Insert HD/FHD toggle button after the filterSelect in controlsDiv
 	const resolutionToggleBtn = document.createElement("button");
 	resolutionToggleBtn.id = "resolutionToggle";
-	resolutionToggleBtn.textContent = "HD";
-	document.body.insertBefore(resolutionToggleBtn, filterSelect);
-
+	resolutionToggleBtn.textContent = "FHD";
+	if (controlsDiv) {
+		controlsDiv.insertBefore(resolutionToggleBtn, filterSelect.nextSibling);
+	}
 	let isFHD = true; // Start with FHD
 
 	resolutionToggleBtn.onclick = () => {
 		isFHD = !isFHD;
-		resolutionToggleBtn.textContent = isFHD ? "HD" : "FHD";
+		resolutionToggleBtn.textContent = isFHD ? "FHD" : "HD";
 		// Stop current stream if exists
 		if (stream) {
 			stream.getTracks().forEach((track) => track.stop());
