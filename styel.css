@@ -1,0 +1,103 @@
+/* Global Material Design Base */
+:root {
+	--primary-color: #6200ee;
+	--primary-light: #bb86fc;
+	--primary-dark: #3700b3;
+	--background-color: #f5f5f5;
+	--surface-color: #ffffff;
+	--text-color: #000000;
+	--font-family: "Roboto", sans-serif;
+	--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: var(--font-family);
+}
+
+body {
+	background-color: var(--background-color);
+	padding: 1rem;
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 100vh;
+}
+
+/* Title */
+h2 {
+	margin-bottom: 1rem;
+	color: var(--primary-dark);
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+/* Camera Feed */
+video,
+canvas {
+	width: 100%;
+	max-width: 400px;
+	aspect-ratio: 3 / 4;
+	border-radius: 12px;
+	box-shadow: var(--shadow);
+	background-color: #000;
+	margin-bottom: 1rem;
+}
+
+/* Controls */
+button,
+select {
+	appearance: none;
+	border: none;
+	outline: none;
+	border-radius: 8px;
+	padding: 0.75rem 1.25rem;
+	margin: 0.5rem 0.25rem;
+	font-size: 1rem;
+	font-weight: 500;
+	background-color: var(--primary-color);
+	color: #fff;
+	box-shadow: var(--shadow);
+	transition: background-color 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+button:hover,
+select:hover {
+	background-color: var(--primary-dark);
+}
+
+select {
+	background-color: var(--primary-light);
+	color: var(--text-color);
+}
+
+/* Download link */
+#downloadLink {
+	display: inline-block;
+	margin-top: 1rem;
+	font-size: 0.95rem;
+	text-decoration: none;
+	color: var(--primary-dark);
+}
+
+/* Responsive Layout */
+@media (min-width: 600px) {
+	body {
+		padding: 2rem;
+	}
+
+	video,
+	canvas {
+		max-width: 480px;
+	}
+
+	button,
+	select {
+		font-size: 1.1rem;
+	}
+}

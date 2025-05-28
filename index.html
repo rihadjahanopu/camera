@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Enhanced Camera App</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="style.css" />
+	</head>
+	<body>
+		<h2>🎥 Enhanced Camera App with Filters & Media Session</h2>
+
+		<video
+			id="video"
+			autoplay
+			muted
+			playsinline></video
+		><br />
+		<canvas
+			id="canvas"
+			style="display: none"></canvas
+		><br />
+
+		<label for="filterSelect">Choose Filter:</label>
+		<select id="filterSelect">
+			<option value="none">Original</option>
+			<option value="grayscale(100%)">Grayscale</option>
+			<option value="sepia(100%)">Sepia</option>
+			<option value="invert(100%)">Invert</option>
+			<option value="blur(4px)">Blur</option>
+			<option value="brightness(1.5)">Bright</option></select
+		><br />
+
+		<button id="toggleAudio">Toggle Audio</button>
+		<button id="startRecording">Start Recording</button>
+		<button id="stopRecording">Stop Recording</button>
+		<button id="capture">Capture Image</button>
+		<a
+			id="downloadLink"
+			style="display: none"
+			download="recorded.webm"
+			>Download Video</a
+		>
+
+		<!-- ffmpeg.js for browser-side MP4 conversion -->
+		<script src="ffmpeg.min.js"></script>
+		<script>
+			window.FFmpeg = FFmpeg;
+			window.createFFmpeg = createFFmpeg;
+		</script>
+		<script src="script.js"></script>
+	</body>
+</html>
