@@ -19,7 +19,13 @@ window.addEventListener("DOMContentLoaded", () => {
 	const controlsDiv = document.querySelector(".controls");
 	const recordToggleBtn = document.createElement("button");
 	recordToggleBtn.id = "recordToggle";
-	recordToggleBtn.textContent = "Start Recording";
+	const recordIcon = document.createElement("img");
+	recordIcon.alt = "Start Recording";
+	recordIcon.src = "./icon/videocam_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
+	recordIcon.style.verticalAlign = "middle";
+	recordIcon.style.marginRight = "0.5em";
+	recordToggleBtn.appendChild(recordIcon);
+	recordToggleBtn.appendChild(document.createTextNode("Start Recording"));
 	if (controlsDiv) {
 		controlsDiv.insertBefore(
 			recordToggleBtn,
@@ -122,12 +128,20 @@ window.addEventListener("DOMContentLoaded", () => {
 			mediaRecorder.start();
 			downloadLink.style.display = "none";
 			recordToggleBtn.style.backgroundColor = "#ff5252";
-			recordToggleBtn.textContent = "Stop Recording";
+			recordIcon.src =
+				"./icon/videocam_off_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
+			recordIcon.alt = "Stop Recording";
+			recordToggleBtn.childNodes[1].nodeValue = "Stop Recording";
 			isRecording = true;
 		} else {
-			mediaRecorder.stop();
+			if (mediaRecorder && mediaRecorder.state === "recording") {
+				mediaRecorder.stop();
+			}
 			recordToggleBtn.style.backgroundColor = "";
-			recordToggleBtn.textContent = "Start Recording";
+			recordIcon.src =
+				"./icon/videocam_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
+			recordIcon.alt = "Start Recording";
+			recordToggleBtn.childNodes[1].nodeValue = "Start Recording";
 			isRecording = false;
 		}
 	};
@@ -167,10 +181,35 @@ window.addEventListener("DOMContentLoaded", () => {
 	};
 
 	// Toggle audio on/off
+	const micIcon = document.createElement("img");
+	micIcon.alt = audioEnabled ? "Mute Audio" : "Unmute Audio";
+	micIcon.src = audioEnabled
+		? "./icon/mic_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+		: "./icon/mic_off_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
+	micIcon.style.verticalAlign = "middle";
+	micIcon.style.marginRight = "0.5em";
+	// Remove all children and re-append icon and label for consistency
+	while (toggleAudioBtn.firstChild)
+		toggleAudioBtn.removeChild(toggleAudioBtn.firstChild);
+	toggleAudioBtn.appendChild(micIcon);
+	toggleAudioBtn.appendChild(
+		document.createTextNode(audioEnabled ? "Mute Audio" : "Unmute Audio")
+	);
+
 	toggleAudioBtn.onclick = () => {
 		audioEnabled = !audioEnabled;
-		stream.getAudioTracks().forEach((track) => (track.enabled = audioEnabled));
-		toggleAudioBtn.textContent = audioEnabled ? "Mute Audio" : "Unmute Audio";
+		if (stream) {
+			stream
+				.getAudioTracks()
+				.forEach((track) => (track.enabled = audioEnabled));
+		}
+		micIcon.src = audioEnabled
+			? "./icon/mic_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+			: "./icon/mic_off_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
+		micIcon.alt = audioEnabled ? "Mute Audio" : "Unmute Audio";
+		toggleAudioBtn.childNodes[1].nodeValue = audioEnabled
+			? "Mute Audio"
+			: "Unmute Audio";
 	};
 
 	// Insert HD/FHD toggle button after the filterSelect in controlsDiv

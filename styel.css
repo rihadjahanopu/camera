@@ -53,12 +53,19 @@ canvas {
 	justify-content: center;
 	gap: 0.5rem;
 	margin-bottom: 20px;
-	position: absolute;
+	/* position: absolute; */
 	bottom: 0;
-	background-color: #ff4081;
+	background: #833ab4;
+	background: linear-gradient(
+		90deg,
+		rgba(131, 58, 180, 1) 0%,
+		rgba(253, 29, 29, 1) 50%,
+		rgba(252, 176, 69, 1) 100%
+	);
 	width: 88%;
 	border-radius: 20px;
 	padding: 0.8rem 1rem;
+	margin-top: 20px;
 }
 
 button,
@@ -112,6 +119,7 @@ select {
 	canvas {
 		border-radius: 12px;
 		width: 100%;
+		height: auto;
 	}
 
 	button,

@@ -6,6 +6,7 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
 			rel="stylesheet" />
+
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
@@ -33,10 +34,26 @@
 				<option value="brightness(1.5)">Bright</option>
 			</select>
 
-			<button id="toggleAudio">Toggle Audio</button>
-			<button id="startRecording">Start Recording</button>
-			<button id="stopRecording">Stop Recording</button>
-			<button id="capture">Capture Image</button>
+			<button id="toggleAudio">
+				<img
+					src="./icon/mic_off_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+					alt="" />
+			</button>
+			<button id="startRecording">
+				<img
+					src="./icon/videocam_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+					alt="" />
+			</button>
+			<button id="stopRecording">
+				<img
+					src="./icon/videocam_off_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+					alt="" />
+			</button>
+			<button id="capture">
+				<img
+					src="./icon/photo_camera_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+					alt="" />
+			</button>
 			<a
 				id="downloadLink"
 				style="display: none"
@@ -45,12 +62,6 @@
 			>
 		</div>
 
-		<!-- ffmpeg.js for browser-side MP4 conversion -->
-		<script src="ffmpeg.min.js"></script>
-		<script>
-			window.FFmpeg = FFmpeg;
-			window.createFFmpeg = createFFmpeg;
-		</script>
 		<script src="script.js"></script>
 	</body>
 </html>
