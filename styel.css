@@ -11,7 +11,7 @@
 }
 
 body {
-	background: var(--background-color);
+	background: black;
 	color: var(--text-color);
 	font-family: var(--font-family);
 	display: flex;
