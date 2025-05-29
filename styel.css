@@ -25,6 +25,7 @@ body {
 	height: 100vh;
 	margin: 0;
 	padding: 16px;
+	position: relative;
 }
 
 /* Title */
@@ -65,7 +66,6 @@ canvas {
 	width: 88%;
 	border-radius: 20px;
 	padding: 0.8rem 1rem;
-	margin-top: 20px;
 }
 
 button,
