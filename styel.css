@@ -151,6 +151,11 @@ select {
 		font-size: 1rem;
 		padding: 0.7rem 1.1rem;
 	}
+
+	body {
+		max-height: 100vh;
+		overflow: hidden;
+	}
 }
 
 ::-webkit-scrollbar {
