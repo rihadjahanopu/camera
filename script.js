@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	recordIcon.style.verticalAlign = "middle";
 	recordIcon.style.marginRight = "0.5em";
 	recordToggleBtn.appendChild(recordIcon);
-	recordToggleBtn.appendChild(document.createTextNode("Start Recording"));
+	// recordToggleBtn.appendChild(document.createTextNode("Start Recording"));
 	if (controlsDiv) {
 		controlsDiv.insertBefore(
 			recordToggleBtn,
@@ -131,7 +131,7 @@ window.addEventListener("DOMContentLoaded", () => {
 			recordIcon.src =
 				"./icon/videocam_off_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
 			recordIcon.alt = "Stop Recording";
-			recordToggleBtn.childNodes[1].nodeValue = "Stop Recording";
+			// recordToggleBtn.childNodes[1].nodeValue = "Stop Recording";
 			isRecording = true;
 		} else {
 			if (mediaRecorder && mediaRecorder.state === "recording") {
@@ -141,7 +141,7 @@ window.addEventListener("DOMContentLoaded", () => {
 			recordIcon.src =
 				"./icon/videocam_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
 			recordIcon.alt = "Start Recording";
-			recordToggleBtn.childNodes[1].nodeValue = "Start Recording";
+			// recordToggleBtn.childNodes[1].nodeValue = "Start Recording";
 			isRecording = false;
 		}
 	};
@@ -192,9 +192,9 @@ window.addEventListener("DOMContentLoaded", () => {
 	while (toggleAudioBtn.firstChild)
 		toggleAudioBtn.removeChild(toggleAudioBtn.firstChild);
 	toggleAudioBtn.appendChild(micIcon);
-	toggleAudioBtn.appendChild(
-		document.createTextNode(audioEnabled ? "Mute Audio" : "Unmute Audio")
-	);
+	// toggleAudioBtn.appendChild(
+	// 	document.createTextNode(audioEnabled ? "Mute Audio" : "Unmute Audio")
+	// );
 
 	toggleAudioBtn.onclick = () => {
 		audioEnabled = !audioEnabled;
