@@ -44,6 +44,7 @@ canvas {
 	box-shadow: var(--shadow);
 	background: #000;
 	margin-bottom: 1.2rem;
+	border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Controls */
