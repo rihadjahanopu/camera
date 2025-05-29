@@ -25,7 +25,6 @@ body {
 	height: 100vh;
 	margin: 0;
 	padding: 16px;
-	position: relative;
 }
 
 /* Title */
@@ -54,7 +53,7 @@ canvas {
 	justify-content: center;
 	gap: 0.5rem;
 	margin-bottom: 20px;
-	/* position: absolute; */
+	position: absolute;
 	bottom: 0;
 	background: #833ab4;
 	background: linear-gradient(
@@ -143,8 +142,7 @@ select {
 	canvas {
 		border-radius: 12px;
 		width: 100%;
-
-		position: relative;
+		height: 100%;
 	}
 
 	button,
